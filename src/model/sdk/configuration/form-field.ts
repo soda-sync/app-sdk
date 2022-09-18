@@ -18,9 +18,9 @@ export interface FormField {
   required: boolean;
 
   /**
-   * A custom validator for this field.
+   * A validator function for this field.
    * @param value The current field value.
    * @returns An error message or null if the value is valid.
    */
-  customValidator?: (value: any) => string | null;
+  validator?: (value: any) => string | null;
 }

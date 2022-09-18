@@ -1,6 +1,6 @@
 import {AppAuthor} from './app-author';
 import {AppFeature, AppVersion} from './types';
-import {AppConfiguration} from '@soda-sync/app-sdk/model';
+import {AppConfiguration} from './configuration';
 
 /**
  * Represents the details of the app.

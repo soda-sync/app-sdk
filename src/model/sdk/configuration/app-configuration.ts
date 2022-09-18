@@ -1,4 +1,4 @@
-import {FormField} from '@soda-sync/app-sdk/model';
+import {FormField} from './form-field';
 
 /**
  * Contains information for the user configuration.

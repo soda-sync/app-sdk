@@ -1,5 +1,5 @@
 import {PriceDto} from './price-dto';
-import {OrderTransactionTypeEnum} from '@soda-sync/app-sdk/model';
+import {OrderTransactionTypeEnum} from './order-transaction-type-enum';
 
 export interface OrderTransactionDto {
   id?: string;
