@@ -1,6 +1,6 @@
 import {AppAuthor} from './app-author';
-import {AppFeature, AppVersion} from './types';
 import {AppConfiguration} from './configuration';
+import {AppFeature, AppVersion} from './types';
 
 /**
  * Represents the details of the app.
