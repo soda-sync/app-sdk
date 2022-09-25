@@ -1,6 +1,7 @@
 import {AppAuthor} from './app-author';
 import {AppConfiguration} from './configuration';
 import {AppFeature, AppVersion} from './types';
+import {Integration} from './integration';
 
 /**
  * Represents the details of the app.
@@ -41,7 +42,7 @@ export interface AppDetails {
   /**
    * The factory to produce the app instance.
    */
-  factory: <T>() => T;
+  factory: <T extends Integration>() => T;
 
   /**
    * Only urls which are whitelisted in this array can be accessed through the SodaSync.http object.

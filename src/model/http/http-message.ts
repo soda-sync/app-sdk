@@ -1,4 +1,4 @@
 export interface HttpMessage {
-  headers: { [name: string]: string[] };
+  headers: { [name: string]: string };
   body?: string;
 }
