@@ -42,7 +42,7 @@ export interface AppDetails {
   /**
    * The factory to produce the app instance.
    */
-  factory: <T extends Integration>() => T;
+  factory: () => Integration;
 
   /**
    * Only urls which are whitelisted in this array can be accessed through the SodaSync.http object.
