@@ -5,6 +5,7 @@ import {OrderStatusEnum} from './order-status-enum';
 import {OrderItemDto} from './order-item-dto';
 import {OrderTransactionDto} from './order-transaction-dto';
 import {AddressDto} from './address-dto';
+import {DateTimeString} from '../sdk';
 
 export interface OrderDto {
   id: string;
@@ -14,8 +15,8 @@ export interface OrderDto {
   shipments: OrderShipmentDto[];
   invoiceAddress?: AddressDto;
   deliveryAddress?: AddressDto;
-  orderDate: Date;
-  payDate?: Date;
+  orderDate: DateTimeString;
+  payDate?: DateTimeString;
   buyer?: BuyerDto;
   status: OrderStatusEnum;
   items: OrderItemDto[];
