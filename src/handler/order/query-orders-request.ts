@@ -1,6 +1,8 @@
 /**
  * A request object for querying orders.
  */
+import {DateTimeString} from '../../model';
+
 export interface QueryOrdersRequest {
   /**
    * The requested page.
@@ -17,7 +19,7 @@ export interface QueryOrdersRequest {
   /**
    * Only include orders which are updated after this date.
    */
-  minUpdatedAt?: Date;
+  minUpdatedAt?: DateTimeString;
 
   /**
    * Custom data
