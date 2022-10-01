@@ -1,6 +1,6 @@
 import {QueryOrdersResult} from './query-orders-result';
 import {QueryOrdersRequest} from './query-orders-request';
-import {HttpRequest, HttpResponse} from '../../model';
+import {HttpRequest, HttpResponse} from '../../bindings';
 
 /**
  * Implement this interface for implementing an api which requests orders.

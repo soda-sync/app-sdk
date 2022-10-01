@@ -1,9 +1,9 @@
 import {PriceDto} from './price-dto';
-import {OrderTransactionTypeEnum} from './order-transaction-type-enum';
+import {OrderTransactionType} from './order-transaction-type';
 
 export interface OrderTransactionDto {
   id?: string;
-  type: OrderTransactionTypeEnum;
+  type: OrderTransactionType;
   method: string;
   amount: PriceDto;
 }

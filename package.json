@@ -1,8 +1,9 @@
 {
   "name": "@soda-sync/app-sdk",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "SodaSync App SDK",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc"

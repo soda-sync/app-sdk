@@ -1,4 +1,4 @@
-export enum OrderTransactionTypeEnum {
+export enum OrderTransactionType {
   payment = 'PAYMENT',
   refund = 'REFUND',
 }

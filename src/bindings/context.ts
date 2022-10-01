@@ -1,4 +1,4 @@
-import {KeyValueSet} from './key-value-set';
+import {KeyValueSet} from '../model';
 
 export interface Context {
   /** The current user configuration. */
