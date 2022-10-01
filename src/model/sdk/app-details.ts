@@ -47,10 +47,10 @@ export interface AppDetails {
   /**
    * Only urls which are whitelisted in this array can be accessed through the SodaSync.http object.
    */
-  accessedUrls?: RegExp[];
+  accessedUrls?: Nullable<RegExp[]>;
 
   /**
    * User configuration.
    */
-  configuration?: AppConfiguration;
+  configuration?: Nullable<AppConfiguration>;
 }

@@ -5,10 +5,9 @@ import {OrderDto} from '../../model';
  */
 export interface QueryOrdersResult {
   /**
-   * The requested page.
-   * Must be >=1
+   * The token of the requested page.
    */
-  page: number;
+  pageToken?: Nullable<string>;
 
   /**
    * The page size
@@ -17,16 +16,10 @@ export interface QueryOrdersResult {
   pageSize: number;
 
   /**
-   * The total number of pages.
-   * Must be >=0
+   * The token of the next page.
+   * If there is no next page, leave it empty.
    */
-  totalPages: number;
-
-  /**
-   * The total count of orders.
-   * Must be >=0
-   */
-  totalCount: number;
+  nextPageToken?: Nullable<string>;
 
   /**
    * The orders.

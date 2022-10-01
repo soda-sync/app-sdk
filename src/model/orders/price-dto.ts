@@ -20,5 +20,5 @@ export interface PriceDto {
    * A 3 letter ISO 4217 currency code.
    * @example EUR
    */
-  currencyCode: string;
+  currencyCode?: Nullable<string>;
 }

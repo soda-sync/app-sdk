@@ -1,5 +1,5 @@
 export interface BuyerDto {
-  mailAddress?: string;
-  phoneNumber?: string;
-  vatId?: string;
+  mailAddress?: Nullable<string>;
+  phoneNumber?: Nullable<string>;
+  vatId?: Nullable<string>;
 }

@@ -5,10 +5,10 @@ import {DateTimeString} from '../../model';
 
 export interface QueryOrdersRequest {
   /**
-   * The requested page.
-   * Must be >=1
+   * The token of the queried page.
+   * To request the first page, set it to null.
    */
-  page: number;
+  pageToken?: Nullable<string>;
 
   /**
    * The page size
@@ -19,10 +19,10 @@ export interface QueryOrdersRequest {
   /**
    * Only include orders which are updated after this date.
    */
-  minUpdatedAt?: DateTimeString;
+  minUpdatedAt?: Nullable<DateTimeString>;
 
   /**
    * Custom data
    */
-  attributes?: { [key: string]: any },
+  attributes?: Nullable<{ [key: string]: any }>,
 }

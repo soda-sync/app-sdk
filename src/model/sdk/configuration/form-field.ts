@@ -22,5 +22,5 @@ export interface FormField {
    * @param value The current field value.
    * @returns An error message or null if the value is valid.
    */
-  validator?: (value: any) => string | null;
+  validator?: Nullable<(value: any) => string | null>;
 }

@@ -2,12 +2,12 @@
  * Represents a url
  */
 export interface Url {
-  scheme?: string;
-  host?: string;
+  scheme?: Nullable<string>;
+  host?: Nullable<string>;
   port: number;
-  user?: string;
-  pass?: string;
-  path?: string;
+  user?: Nullable<string>;
+  pass?: Nullable<string>;
+  path?: Nullable<string>;
   query: { [key: string]: string | string[] };
-  fragment?: string;
+  fragment?: Nullable<string>;
 }
