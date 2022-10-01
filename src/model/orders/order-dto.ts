@@ -1,7 +1,7 @@
 import {PriceDto} from './price-dto';
 import {OrderShipmentDto} from './order-shipment-dto';
 import {BuyerDto} from './buyer-dto';
-import {OrderStatusEnum} from './order-status-enum';
+import {OrderStatus} from './order-status';
 import {OrderItemDto} from './order-item-dto';
 import {OrderTransactionDto} from './order-transaction-dto';
 import {AddressDto} from './address-dto';
@@ -18,7 +18,7 @@ export interface OrderDto {
   orderDate: DateTimeString;
   payDate?: DateTimeString;
   buyer?: BuyerDto;
-  status: OrderStatusEnum;
+  status: OrderStatus;
   items: OrderItemDto[];
   transactions: OrderTransactionDto[];
 }
