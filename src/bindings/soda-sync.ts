@@ -1,7 +1,7 @@
 import {HttpClient} from './http';
-import {Context} from '../model';
 import {Utils} from './utils';
 import {Logger} from './logger';
+import {Context} from './context';
 
 declare global {
   /**
