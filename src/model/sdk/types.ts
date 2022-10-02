@@ -7,3 +7,4 @@ export type AppFeature =
   | 'orders-provide'  /** @see OrderProvider */
   ;
 
+export type FeatureTriggerUrls = Partial<{ [p in AppFeature]: string }>;
