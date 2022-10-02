@@ -1,4 +1,1 @@
-export enum OrderTransactionType {
-  payment = 'PAYMENT',
-  refund = 'REFUND',
-}
+export type OrderTransactionType = 'PAYMENT' | 'REFUND';
