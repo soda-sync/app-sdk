@@ -1,6 +1,6 @@
 {
   "name": "@soda-sync/app-sdk",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "SodaSync App SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
