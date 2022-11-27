@@ -1,4 +1,4 @@
-import {DateTimeString} from '../sdk';
+import {DateTimeString} from '../sdk/types';
 
 export interface OrderShipmentDto {
   shipDate: DateTimeString;

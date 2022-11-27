@@ -1,7 +1,7 @@
-import {HttpClient} from './http';
-import {Utils} from './utils';
 import {Logger} from './logger';
 import {Context} from './context';
+import {HttpClient} from './http/http-client';
+import {Utils} from './utils/utils';
 
 declare global {
   /**

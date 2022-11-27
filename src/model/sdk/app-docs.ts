@@ -1,5 +1,5 @@
 import {FeatureTriggerUrls} from './types';
-import {SetupStep} from './docs';
+import {SetupStep} from './docs/setup-step';
 
 /**
  * Documentation for the user

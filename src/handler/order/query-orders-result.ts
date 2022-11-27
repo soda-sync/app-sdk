@@ -1,8 +1,8 @@
-import {OrderDto} from '../../model';
-
 /**
  * The query orders result
  */
+import {OrderDto} from '../../model/orders/order-dto';
+
 export interface QueryOrdersResult {
   /**
    * The token of the requested page.

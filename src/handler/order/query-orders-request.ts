@@ -1,7 +1,7 @@
 /**
  * A request object for querying orders.
  */
-import {DateTimeString} from '../../model';
+import {DateTimeString} from '../../model/sdk/types';
 
 export interface QueryOrdersRequest {
   /**

@@ -1,4 +1,4 @@
-import {KeyValueSet} from '../model';
+import {KeyValueSet} from '../model/sdk/key-value-set';
 
 export interface Context {
   /**
