@@ -13,7 +13,7 @@
     "types": [],
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "rootDir": "./src"
+    "rootDir": "src",
   },
   "include": [
     "src/",
