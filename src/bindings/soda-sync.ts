@@ -15,7 +15,7 @@ declare global {
     const http: HttpClient;
 
     /**
-     * Access the current app context. This is usefull for accessing configuration values.
+     * Access the current app context. This is useful for accessing configuration values.
      */
     const context: Context;
 
@@ -25,7 +25,7 @@ declare global {
     const logger: Logger;
 
     /**
-     * Helper utilities
+     * Helper utilities.
      */
     const utils: Utils;
   }

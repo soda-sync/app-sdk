@@ -1,6 +1,6 @@
 import {DateTimeString} from '../sdk/types';
 
-export interface OrderShipmentDto {
+export interface ShipmentDto {
   shipDate: DateTimeString;
   sourceCountryCode?: Nullable<string>;
 }

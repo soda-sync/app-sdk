@@ -1,11 +1,11 @@
 export interface Logger {
   /**
-   * Log a debug message. Not that these messages are not logged in production.
+   * Log a debug message. Note that these messages are not logged in production.
    */
   debug(message: string): void;
 
   /**
-   * Log an info message.
+   * Log a info message.
    */
   info(message: string): void;
 
