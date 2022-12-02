@@ -2,6 +2,7 @@ import {Logger} from './logger';
 import {Context} from './context';
 import {HttpClient} from './http/http-client';
 import {Utils} from './utils/utils';
+import {AppDetails} from '../model/sdk/app-details';
 
 declare global {
   /**
@@ -28,5 +29,10 @@ declare global {
      * Helper utilities.
      */
     const utils: Utils;
+
+    /**
+     * Register your app.
+     */
+    const registerApp: (app: AppDetails) => void;
   }
 }
