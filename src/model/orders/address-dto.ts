@@ -1,3 +1,5 @@
+import {Nullable} from '../../types';
+
 export interface AddressDto {
   company?: Nullable<string>;
   firstName?: Nullable<string>;

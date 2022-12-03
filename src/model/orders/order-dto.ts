@@ -6,6 +6,7 @@ import {OrderItemDto} from './order-item-dto';
 import {OrderTransactionDto} from './order-transaction-dto';
 import {AddressDto} from './address-dto';
 import {DateTimeString} from '../sdk/types';
+import {Nullable} from '../../types';
 
 export interface OrderDto {
   /** The id of the order in the external system. */

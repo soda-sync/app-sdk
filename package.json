@@ -1,6 +1,6 @@
 {
   "name": "@soda-sync/app-sdk",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "SodaSync App SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://lab.mintware.de/mintware/soda-sync/app-sdk.git"
   },
-  "author": "Julian Finkler <julian@mintware.de>",
+  "author": "Julian Finkler <julian@sodasync.com>",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^4.8.3"

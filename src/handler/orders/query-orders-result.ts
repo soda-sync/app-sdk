@@ -1,8 +1,9 @@
+import {Nullable} from '../../types';
+import {OrderDto} from '../../model/orders/order-dto';
+
 /**
  * The query orders result
  */
-import {OrderDto} from '../../model/orders/order-dto';
-
 export interface QueryOrdersResult {
   /**
    * The token of the requested page.

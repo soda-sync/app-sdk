@@ -1,4 +1,6 @@
 import {HttpResponse} from './http-response';
+import {Nullable} from '../../types';
+
 export interface HttpClient {
   request(method: string,
           url: string,

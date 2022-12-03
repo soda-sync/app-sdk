@@ -3,6 +3,7 @@ import {AppFeature, AppVersion} from './types';
 import {Integration} from './integration';
 import {AppDocs} from './app-docs';
 import {AppConfiguration} from './configuration/app-configuration';
+import {Nullable} from '../../types';
 
 /**
  * Represents the details of the app.

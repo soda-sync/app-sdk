@@ -1,5 +1,6 @@
 import {FeatureTriggerUrls} from './types';
 import {SetupStep} from './docs/setup-step';
+import {Nullable} from '../../types';
 
 /**
  * Documentation for the user

@@ -1,4 +1,5 @@
 import {PriceDto} from '../money/price-dto';
+import {Nullable} from '../../types';
 
 export interface OrderItemDto {
   /** The id of the product in the external system. */

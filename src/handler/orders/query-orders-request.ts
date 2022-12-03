@@ -1,8 +1,9 @@
+import {DateTimeString} from '../../model/sdk/types';
+import {Nullable} from '../../types';
+
 /**
  * A request object for querying orders.
  */
-import {DateTimeString} from '../../model/sdk/types';
-
 export interface QueryOrdersRequest {
   /**
    * The token of the queried page.

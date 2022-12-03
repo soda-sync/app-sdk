@@ -1,3 +1,5 @@
+import {Nullable} from '../../types';
+
 /**
  * Represents a price.
  */

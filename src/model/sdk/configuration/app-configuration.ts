@@ -1,4 +1,5 @@
 import {FormField} from './form-field';
+import {Nullable} from '../../../types';
 
 /**
  * Contains information for the user configuration.

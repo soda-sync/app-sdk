@@ -1,5 +1,6 @@
 import {PriceDto} from '../money/price-dto';
 import {OrderTransactionType} from './order-transaction-type';
+import {Nullable} from '../../types';
 
 export interface OrderTransactionDto {
   /** The id of the transaction */
