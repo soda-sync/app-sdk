@@ -1,0 +1,6 @@
+{
+  "directory": "./src",
+  "location": "top",
+  "noHeader": true,
+  "delete": true
+}

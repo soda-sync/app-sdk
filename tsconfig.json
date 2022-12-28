@@ -4,7 +4,6 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "emitDeclarationOnly": true,
     "strict": true,
     "types": [],
     "declaration": true,
