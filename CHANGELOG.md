@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.1
+Fixes:
+- Packaging fixed
+
 ## v1.2.0
 Features:
 - Added a PageNumberConverter utility class.
