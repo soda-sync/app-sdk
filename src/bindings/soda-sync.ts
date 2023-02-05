@@ -8,31 +8,33 @@ declare global {
   /**
    * SodaSync bindings
    */
-  module SodaSync {
+  interface SodaSyncEnv {
 
     /**
      * Provides a http client for interacting with apis.
      */
-    const http: HttpClient;
+    readonly http: HttpClient;
 
     /**
      * Access the current app context. This is useful for accessing configuration values.
      */
-    const context: Context;
+    readonly context: Context;
 
     /**
      * Use the logger to log messages from your app.
      */
-    const logger: Logger;
+    readonly logger: Logger;
 
     /**
      * Helper utilities.
      */
-    const utils: Utils;
+    readonly utils: Utils;
 
     /**
      * Register your app.
      */
-    const registerApp: (app: AppDetails) => void;
+    readonly registerApp: (app: AppDetails) => void;
   }
+
+  const SodaSync: SodaSyncEnv;
 }

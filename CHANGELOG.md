@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0
+Features:
+- Converted the global SodaSync module to a constant to be able to use an interface.
+
 ## v1.2.1
 Fixes:
 - Packaging fixed
