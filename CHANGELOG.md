@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0
+Features:
+- Added a getAll method for the ReadonlyKeyValueSet
+
 ## v2.0.0
 Features:
 - Changed the http stuff to async
