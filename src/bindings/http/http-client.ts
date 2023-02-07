@@ -6,5 +6,5 @@ export interface HttpClient {
           url: string,
           body?: Nullable<string>,
           headers?: Nullable<{ [key: string]: string }>,
-  ): HttpResponse;
+  ): Promise<HttpResponse>;
 }

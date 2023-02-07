@@ -13,10 +13,10 @@ export interface OrderRequester {
   /**
    * Handle the incoming request and transform it to a QueryOrdersRequest.
    */
-  processOrdersRequest(request: HttpRequest): QueryOrdersRequest;
+  processOrdersRequest(request: HttpRequest): Promise<QueryOrdersRequest>;
 
   /**
    * Transform the result to the expected response.
    */
-  provideOrders(result: QueryOrdersResult): HttpResponse;
+  provideOrders(result: QueryOrdersResult): Promise<HttpResponse>;
 }

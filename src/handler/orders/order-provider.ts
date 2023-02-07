@@ -10,5 +10,5 @@ export interface OrderProvider {
   /**
    * Handle the request and return the queried orders in a unified form.
    */
-  queryOrders(request: QueryOrdersRequest): QueryOrdersResult;
+  queryOrders(request: QueryOrdersRequest): Promise<QueryOrdersResult>;
 }
