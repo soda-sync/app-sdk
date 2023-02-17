@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.2.0
+Changes:
+- Changed the FeatureTriggerUrls types
+- Removed the nullable type
+
 ## v2.1.1
 Fix:
 - Let the checkConfiguration method return a promise

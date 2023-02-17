@@ -1,4 +1,3 @@
-import {Nullable} from '../../../types';
 
 /**
  * Represents a single form field.
@@ -24,5 +23,5 @@ export interface FormField {
    * @param value The current field value.
    * @returns An error message or null if the value is valid.
    */
-  validator?: Nullable<(value: any) => string | null>;
+  validator?: (value: any) => string | null;
 }

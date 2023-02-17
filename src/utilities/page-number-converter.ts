@@ -1,5 +1,3 @@
-import {Nullable} from "../types";
-
 /**
  * This class helps you to convert page numbers to page tokens.
  * It should be used by classes that implement the OrderRequester interface to convert a page number to a page token.
@@ -53,8 +51,8 @@ export class PageNumberConverter {
      * @param currentPage The current requested page
      * @param token The token for the next page.
      */
-    public static storeNextPageToken(key: string, currentPage: number, token: Nullable<string> = null): void {
+    public static storeNextPageToken(key: string, currentPage: number, token?: string): void {
         SodaSync.context.connectionConfig.set(`${key}_previousRequestedPage`, currentPage.toString());
-        SodaSync.context.connectionConfig.set(`${key}_nextPageToken`, token);
+        SodaSync.context.connectionConfig.set(`${key}_nextPageToken`, token ?? null);
     }
 }

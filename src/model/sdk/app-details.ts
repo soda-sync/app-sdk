@@ -3,7 +3,6 @@ import {AppFeature, AppVersion} from './types';
 import {Integration} from './integration';
 import {AppDocs} from './app-docs';
 import {AppConfiguration} from './configuration/app-configuration';
-import {Nullable} from '../../types';
 
 /**
  * Represents the details of the app.
@@ -49,15 +48,15 @@ export interface AppDetails {
   /**
    * Documentation for the app.
    */
-  docs?: Nullable<AppDocs>;
+  docs?: AppDocs;
 
   /**
    * Only urls which are whitelisted in this array can be accessed through the SodaSync.http object.
    */
-  accessedUrls?: Nullable<RegExp[]>;
+  accessedUrls?: RegExp[];
 
   /**
    * User configuration.
    */
-  configuration?: Nullable<AppConfiguration>;
+  configuration?: AppConfiguration;
 }

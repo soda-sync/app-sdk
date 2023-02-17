@@ -1,13 +1,12 @@
 import {PriceDto} from '../money/price-dto';
-import {Nullable} from '../../types';
 
 export interface OrderItemDto {
   /** The id of the product in the external system. */
-  productId?: Nullable<string>;
+  productId?: string;
   /** The name of the product. */
-  name?: Nullable<string>;
+  name?: string;
   /** The sku of the product. */
-  sku?: Nullable<string>;
+  sku?: string;
   /** The amount of the product. */
   amount: number;
   /** The price for a single item of the product. */

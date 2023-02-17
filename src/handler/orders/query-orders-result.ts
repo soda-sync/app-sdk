@@ -1,4 +1,3 @@
-import {Nullable} from '../../types';
 import {OrderDto} from '../../model/orders/order-dto';
 
 /**
@@ -8,7 +7,7 @@ export interface QueryOrdersResult {
   /**
    * The token of the requested page.
    */
-  pageToken?: Nullable<string>;
+  pageToken?: string;
 
   /**
    * The page size
@@ -20,7 +19,7 @@ export interface QueryOrdersResult {
    * The token of the next page.
    * If there is no next page, leave it empty.
    */
-  nextPageToken?: Nullable<string>;
+  nextPageToken?: string;
 
   /**
    * The orders.

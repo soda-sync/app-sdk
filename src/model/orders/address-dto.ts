@@ -1,14 +1,12 @@
-import {Nullable} from '../../types';
-
 export interface AddressDto {
-  company?: Nullable<string>;
-  firstName?: Nullable<string>;
-  surname?: Nullable<string>;
-  line2?: Nullable<string>;
-  street?: Nullable<string>;
-  houseNumber?: Nullable<string>;
-  zipCode?: Nullable<string>;
-  city?: Nullable<string>;
-  countryCode?: Nullable<string>;
-  state?: Nullable<string>;
+  company?: string;
+  firstName?: string;
+  surname?: string;
+  line2?: string;
+  street?: string;
+  houseNumber?: string;
+  zipCode?: string;
+  city?: string;
+  countryCode?: string;
+  state?: string;
 }
