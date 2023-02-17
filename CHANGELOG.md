@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.3.0
+Features:
+- Added the FeaturePairDetector
+
 ## v2.2.0
 Changes:
 - Changed the FeatureTriggerUrls types
