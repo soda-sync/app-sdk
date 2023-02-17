@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.1
+Fix:
+- Let the checkConfiguration method return a promise
+
 ## v2.1.0
 Features:
 - Added a getAll method for the ReadonlyKeyValueSet
