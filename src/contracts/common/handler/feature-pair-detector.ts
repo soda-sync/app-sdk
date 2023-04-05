@@ -1,5 +1,5 @@
-import {HttpRequest} from "../../bindings/http/http-request";
-import {AppFeature} from "../../model/sdk/types";
+import {HttpRequest} from "../../../bindings/http/http-request";
+import {AppFeature} from "../../../sdk/types";
 
 /**
  * If a requesting system only supports one URL for multiple actions (For example when using a ?action parameter)

@@ -1,5 +1,5 @@
-import {KeyValueSet} from '../model/sdk/key-value-set';
-import {ReadonlyKeyValueSet} from '../model/sdk/readonly-key-value-set';
+import {KeyValueSet} from '../sdk/key-value-set';
+import {ReadonlyKeyValueSet} from '../sdk/readonly-key-value-set';
 
 export interface Context {
   /**

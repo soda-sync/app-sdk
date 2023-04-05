@@ -3,12 +3,18 @@ import {AppFeature, AppVersion} from './types';
 import {Integration} from './integration';
 import {AppDocs} from './app-docs';
 import {AppConfiguration} from './configuration/app-configuration';
-import {FeaturePairDetector} from "../../handler/common/feature-pair-detector";
+import {FeaturePairDetector} from "../contracts/common/handler/feature-pair-detector";
+import {version} from '../../package.json';
+
+export const SdkVersion = version as AppVersion;
 
 /**
  * Represents the details of the app.
  */
 export interface AppDetails {
+
+    sdkVersion: AppVersion;
+
     /**
      * The name of the app. This will be displayed to all users.
      */
@@ -68,3 +74,4 @@ export interface AppDetails {
      */
     featurePairDetector?: FeaturePairDetector;
 }
+

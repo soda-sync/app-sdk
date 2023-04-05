@@ -9,9 +9,10 @@
     "strict": true,
     "types": [],
     "declaration": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
   "include": [
-    "./src",
-  ],
+    "./src"
+  ]
 }

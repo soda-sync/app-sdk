@@ -1,3 +1,5 @@
+import {AttributeValues} from "../../common/model/attribute-values-type";
+
 export interface AddressDto {
   company?: string;
   firstName?: string;
@@ -9,4 +11,5 @@ export interface AddressDto {
   city?: string;
   countryCode?: string;
   state?: string;
+  attributeValues?: AttributeValues;
 }

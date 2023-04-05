@@ -1,4 +1,4 @@
-import {DateTimeString} from '../../model/sdk/types';
+import {DateTimeString} from '../../../sdk/types';
 
 /**
  * A request object for querying orders.

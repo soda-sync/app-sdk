@@ -1,4 +1,4 @@
-import {OrderDto} from '../../model/orders/order-dto';
+import {OrderDto} from '../model/order-dto';
 
 /**
  * The query orders result

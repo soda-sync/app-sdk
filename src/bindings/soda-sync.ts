@@ -1,7 +1,7 @@
 import {Logger} from './logger';
 import {Context} from './context';
 import {HttpClient} from './http/http-client';
-import {AppDetails} from '../model/sdk/app-details';
+import {AppDetails} from '../sdk/app-details';
 
 declare global {
   /**

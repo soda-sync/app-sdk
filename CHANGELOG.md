@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.0
+Changes:
+Project restructured and models reorganized
+
 ## v2.3.0
 Features:
 - Added the FeaturePairDetector
