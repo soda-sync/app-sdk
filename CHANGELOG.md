@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.1
+Fix:
+Scripts updated
+
 ## v3.0.0
 Changes:
 Project restructured and models reorganized
