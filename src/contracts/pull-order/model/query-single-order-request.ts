@@ -1,5 +1,5 @@
 import {Filter, Join, NestedProperties} from '../../../sdk/types';
-import {OrderDto} from "../model/order-dto";
+import {OrderDto} from "../../orders/order-dto";
 
 /**
  * A request object for querying a single order.

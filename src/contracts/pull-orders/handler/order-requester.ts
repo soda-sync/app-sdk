@@ -1,5 +1,5 @@
-import {QueryOrdersResult} from './query-orders-result';
-import {QueryOrdersRequest} from './query-orders-request';
+import {QueryOrdersResult} from '../model/query-orders-result';
+import {QueryOrdersRequest} from '../model/query-orders-request';
 import {HttpRequest} from '../../../bindings/http/http-request';
 import {HttpResponse} from '../../../bindings/http/http-response';
 

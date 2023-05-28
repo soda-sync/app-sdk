@@ -1,7 +1,7 @@
-import {MoneyDto} from '../../money/model/money-dto';
 import {OrderTransactionType} from './order-transaction-type';
-import {DateTimeString} from "../../../sdk/types";
-import {AttributeValues} from "../../common/model/attribute-values-type";
+import {AttributeValues} from "../common/model/attribute-values-type";
+import {DateTimeString} from "../../sdk/types";
+import {MoneyDto} from "../money/model/money-dto";
 
 export interface OrderTransactionDto {
   /** The id of the transaction */

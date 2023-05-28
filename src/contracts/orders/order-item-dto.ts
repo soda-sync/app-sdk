@@ -1,5 +1,5 @@
-import {MoneyDto} from '../../money/model/money-dto';
-import {AttributeValues} from "../../common/model/attribute-values-type";
+import {AttributeValues} from "../common/model/attribute-values-type";
+import {MoneyDto} from "../money/model/money-dto";
 
 export interface OrderItemDto {
     /** The id of the product in the external system. */

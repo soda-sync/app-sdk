@@ -1,11 +1,11 @@
-import {ShipmentDto} from '../../shipments/model/shipment-dto';
+import {ShipmentDto} from '../shipments/model/shipment-dto';
 import {CustomerDto} from './customer-dto';
 import {OrderStatus} from './order-status';
 import {OrderItemDto} from './order-item-dto';
 import {OrderTransactionDto} from './order-transaction-dto';
 import {AddressDto} from './address-dto';
-import {DateTimeString} from '../../../sdk/types';
-import {AttributeValues} from "../../common/model/attribute-values-type";
+import {AttributeValues} from "../common/model/attribute-values-type";
+import {DateTimeString} from "../../sdk/types";
 
 export interface OrderDto {
     /** The id of the order in the external system. */

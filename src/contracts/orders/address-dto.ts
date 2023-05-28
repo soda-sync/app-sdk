@@ -1,4 +1,4 @@
-import {AttributeValues} from "../../common/model/attribute-values-type";
+import {AttributeValues} from "../common/model/attribute-values-type";
 
 export interface AddressDto {
   company?: string;
