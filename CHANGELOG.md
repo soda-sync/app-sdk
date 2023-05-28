@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.1.0
+Features:
+- Added an TerminateRequestError
+
+Change:
+Contracts reorganized
+
 ## v3.0.1
 Fix:
 Scripts updated
