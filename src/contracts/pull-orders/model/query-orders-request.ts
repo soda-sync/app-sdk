@@ -1,4 +1,5 @@
-import {DateTimeString} from '../../../sdk/types';
+import {Filter, Join, NestedProperties} from '../../../sdk/types';
+import {OrderDto} from "../../orders/order-dto";
 
 /**
  * A request object for querying orders.
@@ -17,9 +18,9 @@ export interface QueryOrdersRequest {
   pageSize: number;
 
   /**
-   * Only include orders which are updated after this date.
+   * The filters to apply for query the orders
    */
-  minUpdatedAt?: DateTimeString;
+  filters: Filter<OrderDto, Join<NestedProperties<OrderDto>, '.'>>[]
 
   /**
    * Custom data
