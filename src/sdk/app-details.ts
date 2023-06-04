@@ -4,9 +4,7 @@ import {Integration} from './integration';
 import {AppDocs} from './app-docs';
 import {AppConfiguration} from './configuration/app-configuration';
 import {FeaturePairDetector} from "../contracts/common/handler/feature-pair-detector";
-import {version} from '../../package.json';
 
-export const SdkVersion = version as AppVersion;
 
 /**
  * Represents the details of the app.
