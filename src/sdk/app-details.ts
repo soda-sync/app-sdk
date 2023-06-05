@@ -1,6 +1,5 @@
 import {AppAuthor} from './app-author';
-import {AppFeature, AppVersion} from './types';
-import {Integration} from './integration';
+import {AppFactory, AppFeature, AppVersion} from './types';
 import {AppDocs} from './app-docs';
 import {AppConfiguration} from './configuration/app-configuration';
 import {FeaturePairDetector} from "../contracts/common/handler/feature-pair-detector";
@@ -47,8 +46,12 @@ export interface AppDetails {
 
     /**
      * The factory to produce the app instance.
+     *
+     * If the feature is undefined, the runtime will call checkConfiguration
+     * in the Integration interface.
+     *
      */
-    factory: () => Integration;
+    factory: AppFactory;
 
     /**
      * Documentation for the app.
@@ -72,4 +75,3 @@ export interface AppDetails {
      */
     featurePairDetector?: FeaturePairDetector;
 }
-

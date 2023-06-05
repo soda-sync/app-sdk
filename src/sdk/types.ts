@@ -1,13 +1,26 @@
+import {OrderRequester} from "../contracts/pull-orders/handler/order-requester";
+import {Integration} from "./integration";
+import {OrderProvider} from "../contracts/pull-orders/handler/order-provider";
+import {SingleOrderRequester} from "../contracts/pull-order/handler/single-order-requester";
+import {SingleOrderProvider} from "../contracts/pull-order/handler/single-order-provider";
+import {ProductRequester} from "../contracts/pull-products/handler/product-requester";
+import {ProductProvider} from "../contracts/pull-products/handler/product-provider";
+
 export type AppVersion = `${number}.${number}.${number}`;
 
 export type DateTimeString = string;
 
-export type AppFeature =
-    'orders-request' /** @see OrderRequester */
-    | 'orders-provide'  /** @see OrderProvider */
-    | 'order-request' /** @see SingleOrderRequester */
-    | 'order-provide'  /** @see SingleOrderProvider */
-    ;
+export type AppFeatureMapping = {
+    'orders-request': OrderRequester,
+    'orders-provide': OrderProvider,
+    'order-request': SingleOrderRequester,
+    'order-provide': SingleOrderProvider,
+    'products-request': ProductRequester,
+    'products-provide': ProductProvider,
+};
+export type AppFeature = keyof AppFeatureMapping;
+
+export type AppFactory = (feature?: AppFeature) => Integration | (Integration & AppFeatureMapping[AppFeature]);
 
 export type FeatureTrigger = {
     sourceFeature: AppFeature,
