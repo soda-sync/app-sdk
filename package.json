@@ -1,19 +1,16 @@
 {
   "name": "@soda-sync/app-sdk",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "SodaSync App SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "private": false,
   "scripts": {
     "build": "tsc",
     "generate-barrels": "barrelsby -c barrelsby.json"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://lab.mintware.de/mintware/soda-sync/app-sdk.git"
-  },
   "author": "Julian Finkler <julian@sodasync.com>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "barrelsby": "^2.5.1",
     "typescript": "^4.8.3"

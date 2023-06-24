@@ -1,5 +1,8 @@
 # Changelog
 
+## v3.2.2
+First public release
+
 ## v3.2.1
 Fix scripts in package.json
 
