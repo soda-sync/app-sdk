@@ -2,6 +2,7 @@ import {Logger} from './logger';
 import {Context} from './context';
 import {HttpClient} from './http/http-client';
 import {AppDetails} from '../sdk/app-details';
+import {Hooks} from "./hooks";
 
 declare global {
   /**
@@ -28,6 +29,11 @@ declare global {
      * Register your app.
      */
     readonly registerApp: (app: AppDetails) => void;
+
+    /**
+     * Hooks to control the flow of soda sync apps.
+     */
+    readonly hooks: Hooks;
   }
 
   const SodaSync: SodaSyncEnv;
