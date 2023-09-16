@@ -1,6 +1,7 @@
 import {AttributeValues} from "../common/model/attribute-values-type";
 
 export interface AddressDto {
+  id?: string;
   company?: string;
   firstName?: string;
   surname?: string;
