@@ -20,7 +20,7 @@ export interface FormField {
 
   /**
    * A validator function for this field.
-   * @param value The current field value.
+   * @param value - The current field value.
    * @returns An error message or null if the value is valid.
    */
   validator?: (value: any) => string | null;

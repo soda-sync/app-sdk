@@ -14,14 +14,16 @@ export class PageNumberConverter {
     /**
      * Returns the token for the requested page. If the first page is requested, null will be returned.
      *
-     * @param key An unique identifier. This is used to fetch the data from the connection config.
-     * @param page The requested page.
+     * @param key - An unique identifier. This is used to fetch the data from the connection config.
+     * @param page - The requested page.
      *
-     * @return If the page is 1, null, otherwise the page token for the next page.
+     * @returns If the page is 1, null, otherwise the page token for the next page.
      *
-     * @throws If the requested page is out of order (E.g. 1 -> 2 -> 5)
-     * @throws If the connection config does not contain a token for the page.
+     * @throws {@link Error}
+     * If the requested page is out of order (E.g. `1 -> 2 -> 5`)
      *
+     * @throws {@link Error}
+     * If the connection config does not contain a token for the page.
      */
     public static getPageToken(key: string, page: number): string | null {
         if (page == 1) {
@@ -47,9 +49,9 @@ export class PageNumberConverter {
     /**
      * Stores the token for the next page in the connection config.
      *
-     * @param key An unique identifier. This is used to store the data in the connection config.
-     * @param currentPage The current requested page
-     * @param token The token for the next page.
+     * @param key - An unique identifier. This is used to store the data in the connection config.
+     * @param currentPage - The current requested page
+     * @param token - The token for the next page.
      */
     public static storeNextPageToken(key: string, currentPage: number, token?: string): void {
         SodaSync.context.connectionConfig.set(`${key}_previousRequestedPage`, currentPage.toString());
