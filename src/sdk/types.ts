@@ -30,7 +30,7 @@ export type FeatureTrigger = {
 
 export type FeatureTriggers = Array<FeatureTrigger>;
 
-export type NestedProperties<T> = T extends string ? [] : {
+export type NestedProperties<T> = T extends string | unknown[] ? [] : {
     [K in Extract<keyof T, string>]: [K, ...NestedProperties<T[K]>]
 }[Extract<keyof T, string>];
 
