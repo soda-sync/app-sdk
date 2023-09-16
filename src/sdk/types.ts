@@ -34,6 +34,12 @@ export type NestedProperties<T> = T extends string | unknown[] ? [] : {
     [K in Extract<keyof T, string>]: [K, ...NestedProperties<T[K]>]
 }[Extract<keyof T, string>];
 
+export type NestedPropertiesRecursive<T> =
+    T extends string ? [] :
+        T extends (infer U)[] ?
+            { [K in Extract<keyof U, string>]: [K, ...NestedPropertiesRecursive<U[K]>] }[Extract<keyof U, string>] :
+            { [K in Extract<keyof T, string>]: [K, ...NestedPropertiesRecursive<T[K]>] }[Extract<keyof T, string>];
+
 export type Join<T extends string[], D extends string> =
     T extends []
         ? never
@@ -54,8 +60,11 @@ export enum FilterOperation {
     LowerThan = 'lt',
 }
 
-export type Filter<T, TField extends Join<string[], '.'>> = {
-    field: TField,
-    operation: FilterOperation,
+export type Field<TPath extends Join<string[], '.'>> = {
+    field: TPath,
     value: unknown,
+}
+
+export type Filter<TPath extends Join<string[], '.'>> = Field<TPath> & {
+    operation: FilterOperation,
 }

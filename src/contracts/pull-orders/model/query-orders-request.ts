@@ -1,4 +1,4 @@
-import {Filter, Join, NestedProperties} from '../../../sdk/types';
+import {Filter, Join, NestedPropertiesRecursive} from '../../../sdk/types';
 import {OrderDto} from "../../orders/order-dto";
 import {QueryRequest} from "../../common/model/query-request";
 
@@ -9,5 +9,5 @@ export interface QueryOrdersRequest extends QueryRequest {
     /**
      * The filters to apply for query the orders
      */
-    filters: Filter<OrderDto, Join<NestedProperties<OrderDto>, '.'>>[]
+    filters: Filter<Join<NestedPropertiesRecursive<OrderDto>, '.'>>[]
 }
