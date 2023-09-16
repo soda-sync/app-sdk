@@ -68,3 +68,12 @@ export type Field<TPath extends Join<string[], '.'>> = {
 export type Filter<TPath extends Join<string[], '.'>> = Field<TPath> & {
     operation: FilterOperation,
 }
+
+/**
+ * Enforce a specific type for an inline value.
+ * @param val - The value
+ * @returns The value
+ */
+export function enforce<T>(val: T): T {
+    return val;
+}
