@@ -1,5 +1,19 @@
 # Changelog
 
+## v3.3.0
+Features:
+- Accept also properties of type array in a nested properties string
+- Added a new NestedPropertiesRecursive type which allows filtering for properties in array elements
+- Introduce `SodaSync.hooks` which allows to control the flow.
+- Added missing id properties to AddressDto and CustomerDto
+- Added a new enforce function which enforce types in unknown contexts
+- Added a new order status PROCESSING 
+- Added the paymentStatus Field to the OrderDto 
+- Added the patch-orders contract which allows order updates
+
+Deprecate:
+- TerminateRequestError: This never worked. Use `SodaSync.hooks.terminateRequest(response)` instead.
+
 ## v3.2.2
 First public release
 
