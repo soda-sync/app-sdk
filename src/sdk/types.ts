@@ -5,6 +5,8 @@ import {SingleOrderRequester} from "../contracts/pull-order/handler/single-order
 import {SingleOrderProvider} from "../contracts/pull-order/handler/single-order-provider";
 import {ProductRequester} from "../contracts/pull-products/handler/product-requester";
 import {ProductProvider} from "../contracts/pull-products/handler/product-provider";
+import {OrdersUpdateSupplier} from "../contracts/patch-orders/handler/orders-update-supplier";
+import {OrdersUpdateConsumer} from "../contracts/patch-orders/handler/orders-update-consumer";
 
 export type AppVersion = `${number}.${number}.${number}`;
 
@@ -13,6 +15,8 @@ export type DateTimeString = string;
 export type AppFeatureMapping = {
     'orders-request': OrderRequester,
     'orders-provide': OrderProvider,
+    'orders-update-supply': OrdersUpdateSupplier,
+    'orders-update-consume': OrdersUpdateConsumer,
     'order-request': SingleOrderRequester,
     'order-provide': SingleOrderProvider,
     'products-request': ProductRequester,

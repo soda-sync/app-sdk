@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.3.1
+
+Bugfixes:
+- Add orders-update-supply and orders-update-consume as App Features
+
 ## v3.3.0
 Features:
 - Accept also properties of type array in a nested properties string
