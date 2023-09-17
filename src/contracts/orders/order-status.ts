@@ -1,1 +1,1 @@
-export type OrderStatus  = 'OPEN' | 'CONFIRMED' | 'CANCELED' | 'COMPLETED';
+export type OrderStatus  = 'OPEN' | 'CONFIRMED' | 'PROCESSING' | 'CANCELED' | 'COMPLETED';
