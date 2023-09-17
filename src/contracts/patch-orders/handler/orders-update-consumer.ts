@@ -57,5 +57,5 @@ export interface OrdersUpdateConsumer {
      *
      * @returns The list of patched orders
      */
-    updateOrder(request: PatchOrdersRequest): Promise<OrderDto[]>;
+    updateOrders(request: PatchOrdersRequest): Promise<OrderDto[]>;
 }

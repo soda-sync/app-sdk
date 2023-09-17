@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.3.2
+
+Bugfixes:
+- Rename updateOrder to updateOrders
+
 ## v3.3.1
 
 Bugfixes:
