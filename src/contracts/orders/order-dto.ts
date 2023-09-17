@@ -6,6 +6,7 @@ import {OrderTransactionDto} from './order-transaction-dto';
 import {AddressDto} from './address-dto';
 import {AttributeValues} from "../common/model/attribute-values-type";
 import {DateTimeString} from "../../sdk/types";
+import {PaymentStatus} from "./payment-status";
 
 export interface OrderDto {
     /** The id of the order in the external system. */
@@ -34,6 +35,9 @@ export interface OrderDto {
 
     /** The status of the order. */
     status: OrderStatus;
+
+    /** The status of the payment. */
+    paymentStatus: PaymentStatus;
 
     /** Transactions related to the order. */
     transactions: OrderTransactionDto[];
