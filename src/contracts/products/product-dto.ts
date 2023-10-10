@@ -11,7 +11,7 @@ export interface ProductDto {
     id?: string;
 
     /**
-     * The if of the parent product.
+     * The id of the parent product.
      * This is used to link a variation to its parent product.
      */
     variationParentId?: string;

@@ -1,5 +1,10 @@
 # Changelog
 
+## Next
+
+Features:
+- Added the push-products contract
+
 ## v3.3.2
 
 Bugfixes:
