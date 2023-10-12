@@ -3,7 +3,7 @@ import {AppFactory, AppFeature, AppVersion} from './types';
 import {AppDocs} from './app-docs';
 import {AppConfiguration} from './configuration/app-configuration';
 import {FeaturePairDetector} from "../contracts/common/handler/feature-pair-detector";
-
+import {OAuth2Client} from "../contracts/oauth/oauth2-client";
 
 /**
  * Represents the details of the app.
@@ -74,4 +74,9 @@ export interface AppDetails {
      * trigger urls.
      */
     featurePairDetector?: FeaturePairDetector;
+
+    /**
+     * If you need to authenticate using OAuth 2 that uses redirection, you can provide an OAuth2Client.
+     */
+    oauth2Client?: OAuth2Client;
 }

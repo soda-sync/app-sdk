@@ -11,12 +11,18 @@ export interface FormField {
   /**
    * The field type
    */
-  type: 'text' | 'email' | 'password' | 'url' | 'checkbox';
+  type: 'text' | 'email' | 'password' | 'url' | 'checkbox' | 'hidden';
 
   /**
    * Mark this field as required.
    */
   required: boolean;
+
+  /**
+   * Set this to true if this field contains sensitive information.
+   * If this is set to true, the current field value is not getting transferred to the frontend.
+   */
+  isSecret?: boolean;
 
   /**
    * A validator function for this field.
