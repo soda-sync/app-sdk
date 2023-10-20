@@ -1,6 +1,6 @@
 # Changelog
 
-## Next
+## v3.4.0
 
 Features:
 - Added the push-products contract
