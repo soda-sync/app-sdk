@@ -9,6 +9,8 @@ import {OrdersUpdateSupplier} from "../contracts/patch-orders/handler/orders-upd
 import {OrdersUpdateConsumer} from "../contracts/patch-orders/handler/orders-update-consumer";
 import {PushProductsSupplier} from "../contracts/push-products/handler/push-products-supplier";
 import {PushProductsConsumer} from "../contracts/push-products/handler/push-products-consumer";
+import {ProductsUpdateSupplier} from "../contracts/patch-products/handler/products-update-supplier";
+import {ProductsUpdateConsumer} from "../contracts/patch-products/handler/products-update-consumer";
 
 export type AppVersion = `${number}.${number}.${number}`;
 
@@ -25,6 +27,8 @@ export type AppFeatureMapping = {
     'products-provide': ProductProvider,
     'products-supply': PushProductsSupplier,
     'products-consume': PushProductsConsumer,
+    'products-update-supply': ProductsUpdateSupplier,
+    'products-update-consume': ProductsUpdateConsumer,
 };
 export type AppFeature = keyof AppFeatureMapping;
 

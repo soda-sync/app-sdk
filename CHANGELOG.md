@@ -5,6 +5,7 @@
 Features:
 - Added the push-products contract
 - Added support for authenticating against OAuth 2 (OAuth2Client)
+- Added the patch-products contract which allows product updates
 
 ## v3.3.2
 
