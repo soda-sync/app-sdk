@@ -1,7 +1,8 @@
-import {OrderDto} from "../../orders/order-dto";
-import {QueryResult} from "../../common/model/query-result";
+import {ZOrderDto} from "../../orders/order-dto";
+import {zQueryResult} from "../../common/model/query-result";
+import {z} from "zod";
 
-/**
- * The query orders result
- */
-export type QueryOrdersResult = QueryResult<OrderDto>;
+export const ZQueryOrdersResult = zQueryResult(ZOrderDto);
+
+/* The query orders result */
+export type QueryOrdersResult = z.infer<typeof ZQueryOrdersResult>;

@@ -1,13 +1,10 @@
-import {Filter, Join, NestedProperties, NestedPropertiesRecursive,} from "../../sdk/types";
-import {ProductDto} from "./product-dto";
-import {Patcher} from "../common/model/data-patching";
+import {zFilter,} from "../../sdk/types";
+import {ZProductDto} from "./product-dto";
+import {zPatcher} from "../common/model/data-patching";
+import {z} from "zod";
 
-/**
- * This interface represents a request to update / patch products.
- */
-export interface PatchProductsRequest {
-    /**
-     * Filters are used to restrict the set of products to modify.
+export const ZPatchProductsRequest = z.object({
+    /* Filters are used to restrict the set of products to modify.
      * All provided filters must match against a product.
      *
      * @example
@@ -18,10 +15,8 @@ export interface PatchProductsRequest {
      * The source system need to update all products with taxRate greater than 0 the filters should be
      * `[{field: 'taxRate', operation: FilterOperation.GreaterThan, value: 0}]`
      */
-    filters: Filter<Join<NestedPropertiesRecursive<ProductDto>, '.'>>[];
-
-    /**
-     * These are the fields to update of the product.
+    filters: z.array(zFilter(ZProductDto)),
+    /* These are the fields to update of the product.
      *
      * Field values SHOULD use the enforce function to ensure the type.
      *
@@ -29,5 +24,8 @@ export interface PatchProductsRequest {
      * If you like to set the manufacturer of all matching products to "My manufacturer":
      * `[{field: 'manufacturer', value: enforce<ProductDto["manufacturer"]>('My manufacturer')}]`
      */
-    fields: Patcher<Join<NestedProperties<ProductDto>, '.'>>[];
-}
+    fields: z.array(zPatcher(ZProductDto)),
+});
+
+/* This type represents a request to update / patch products. */
+export type PatchProductsRequest = z.infer<typeof ZPatchProductsRequest>;

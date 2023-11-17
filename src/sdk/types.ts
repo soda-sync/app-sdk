@@ -11,10 +11,16 @@ import {PushProductsSupplier} from "../contracts/push-products/handler/push-prod
 import {PushProductsConsumer} from "../contracts/push-products/handler/push-products-consumer";
 import {ProductsUpdateSupplier} from "../contracts/patch-products/handler/products-update-supplier";
 import {ProductsUpdateConsumer} from "../contracts/patch-products/handler/products-update-consumer";
+import {z} from "zod";
 
-export type AppVersion = `${number}.${number}.${number}`;
+export const ZAppVersion = z.custom<`${number}.${number}.${number}`>((val) =>
+    /^\d+\.\d+\.\d+$/g.test(val as string)
+);
 
-export type DateTimeString = string;
+export type AppVersion = z.infer<typeof ZAppVersion>;
+
+export const ZDateTimeString = z.string();
+export type DateTimeString = z.infer<typeof ZDateTimeString>;
 
 export type AppFeatureMapping = {
     'orders-request': OrderRequester,
@@ -30,6 +36,7 @@ export type AppFeatureMapping = {
     'products-update-supply': ProductsUpdateSupplier,
     'products-update-consume': ProductsUpdateConsumer,
 };
+
 export type AppFeature = keyof AppFeatureMapping;
 
 export type AppFactory = (feature?: AppFeature) => Integration | (Integration & AppFeatureMapping[AppFeature]);
@@ -42,26 +49,27 @@ export type FeatureTrigger = {
 
 export type FeatureTriggers = Array<FeatureTrigger>;
 
-export type NestedProperties<T> = T extends string | unknown[] ? [] : {
-    [K in Extract<keyof T, string>]: [K, ...NestedProperties<T[K]>]
-}[Extract<keyof T, string>];
+export function zObjectPropertyPath<T extends z.ZodRawShape>(obj: z.ZodObject<T>, arrayDeepInclude: boolean) {
+    function getPaths(obj: z.ZodObject<any>, currentPath: string[] = [], pathsOut: string[] = []): [string, ...string[]] {
+        let values = obj.keyof()._def.values as string[];
+        for (let k of values) {
+            let next = obj.shape[k!];
+            while (arrayDeepInclude && next instanceof z.ZodArray) {
+                next = (next as z.ZodArray<any, any>)._def.type;
+            }
+            let nextPath = [...currentPath, k];
+            if (next instanceof z.ZodObject) {
+                getPaths(next, nextPath, pathsOut);
+            } else {
+                pathsOut.push(nextPath.join("."));
+            }
+        }
+        return pathsOut as [string, ...string[]];
+    }
 
-export type NestedPropertiesRecursive<T> =
-    T extends string ? [] :
-        T extends (infer U)[] ?
-            { [K in Extract<keyof U, string>]: [K, ...NestedPropertiesRecursive<U[K]>] }[Extract<keyof U, string>] :
-            { [K in Extract<keyof T, string>]: [K, ...NestedPropertiesRecursive<T[K]>] }[Extract<keyof T, string>];
-
-export type Join<T extends string[], D extends string> =
-    T extends []
-        ? never
-        : T extends [infer F]
-            ? F
-            : T extends [infer F, ...infer R]
-                ? F extends string
-                    ? `${F}${D}${Join<Extract<R, string[]>, D>}`
-                    : never
-                : string;
+    let paths = getPaths(obj, [], []);
+    return z.enum(paths);
+}
 
 export enum FilterOperation {
     Equal = 'eq',
@@ -72,13 +80,17 @@ export enum FilterOperation {
     LowerThan = 'lt',
 }
 
-export type Field<TPath extends Join<string[], '.'>> = {
-    field: TPath,
-    value: unknown,
+export function zField<T extends z.ZodRawShape>(obj: z.ZodObject<T>, arrayDeepInclude: boolean) {
+    return z.object({
+        field: zObjectPropertyPath(obj, arrayDeepInclude),
+        value: z.unknown(),
+    })
 }
 
-export type Filter<TPath extends Join<string[], '.'>> = Field<TPath> & {
-    operation: FilterOperation,
+export function zFilter<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return zField(obj, true).extend({
+        operation: z.nativeEnum(FilterOperation),
+    });
 }
 
 /**

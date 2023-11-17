@@ -1,46 +1,38 @@
-import {ShipmentDto} from '../shipments/model/shipment-dto';
-import {CustomerDto} from './customer-dto';
-import {OrderStatus} from './order-status';
-import {OrderItemDto} from './order-item-dto';
-import {OrderTransactionDto} from './order-transaction-dto';
-import {AddressDto} from './address-dto';
-import {AttributeValues} from "../common/model/attribute-values-type";
-import {DateTimeString} from "../../sdk/types";
-import {PaymentStatus} from "./payment-status";
+import {ZShipmentDto} from '../shipments/model/shipment-dto';
+import {ZCustomerDto} from './customer-dto';
+import {ZOrderStatus} from './order-status';
+import {ZOrderItemDto} from './order-item-dto';
+import {ZOrderTransactionDto} from './order-transaction-dto';
+import {ZAddressDto} from './address-dto';
+import {ZAttributeValues} from "../common/model/attribute-values-type";
+import {ZDateTimeString} from "../../sdk/types";
+import {ZPaymentStatus} from "./payment-status";
+import {z} from "zod";
 
-export interface OrderDto {
-    /** The id of the order in the external system. */
-    id: string;
+export const ZOrderDto = z.object({
+    /* The id of the order in the external system. */
+    id: z.string(),
+    /* The order number. */
+    orderNumber: z.string(),
+    /* The date when the customer placed the order. */
+    orderDate: ZDateTimeString,
+    /* Details about the customer. */
+    customer: ZCustomerDto.optional(),
+    /* The invoice address. */
+    invoiceAddress: ZAddressDto.optional(),
+    /* The delivery address. */
+    deliveryAddress: ZAddressDto.optional(),
+    /* The ordered items. */
+    items: z.array(ZOrderItemDto),
+    /* Shipments related to the order. */
+    shipments: z.array(ZShipmentDto),
+    /* The status of the order. */
+    status: ZOrderStatus,
+    /* The status of the payment. */
+    paymentStatus: ZPaymentStatus,
+    /* Transactions related to the order. */
+    transactions: z.array(ZOrderTransactionDto),
+    attributeValues: ZAttributeValues,
+});
 
-    /** The order number. */
-    orderNumber: string;
-
-    /** The date when the customer placed the order. */
-    orderDate: DateTimeString;
-
-    /** Details about the customer. */
-    customer?: CustomerDto;
-
-    /** The invoice address. **/
-    invoiceAddress?: AddressDto;
-
-    /** The delivery address. **/
-    deliveryAddress?: AddressDto;
-
-    /** The ordered items. */
-    items: OrderItemDto[];
-
-    /** Shipments related to the order. */
-    shipments: ShipmentDto[];
-
-    /** The status of the order. */
-    status: OrderStatus;
-
-    /** The status of the payment. */
-    paymentStatus: PaymentStatus;
-
-    /** Transactions related to the order. */
-    transactions: OrderTransactionDto[];
-
-    attributeValues?: AttributeValues;
-}
+export type OrderDto = z.infer<typeof ZOrderDto>;

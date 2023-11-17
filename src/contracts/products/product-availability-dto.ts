@@ -1,15 +1,13 @@
-import {AttributeValues} from "../common/model/attribute-values-type";
+import {ZAttributeValues} from "../common/model/attribute-values-type";
+import {z} from "zod";
 
-export interface ProductAvailabilityDto {
-
-    /** The number of products in stock */
-    amount: number;
-
-    /** The id of the stock */
-    stockId?: string;
-
-    /** The name of the stock. */
-    stockName?: string;
-
-    attributeValues?: AttributeValues;
-}
+export const ZProductAvailabilityDto = z.object({
+    /* The number of products in stock */
+    amount: z.number(),
+    /* The id of the stock */
+    stockId: z.string().optional(),
+    /* The name of the stock */
+    stockName: z.string().optional(),
+    attributeValues: ZAttributeValues,
+});
+export type ProductAvailabilityDto = z.infer<typeof ZProductAvailabilityDto>;

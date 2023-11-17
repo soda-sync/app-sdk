@@ -1,9 +1,12 @@
-import {AttributeValues} from "../common/model/attribute-values-type";
+import {ZAttributeValues} from "../common/model/attribute-values-type";
+import {z} from "zod"
 
-export interface CustomerDto {
-  id?: string;
-  mailAddress?: string;
-  phoneNumber?: string;
-  vatId?: string;
-  attributeValues?: AttributeValues;
-}
+export const ZCustomerDto = z.object({
+  id: z.string().optional(),
+  mailAddress: z.string().email().optional(),
+  phoneNumber: z.string().optional(),
+  vatId: z.string().optional(),
+  attributeValues: ZAttributeValues,
+});
+
+export type CustomerDto = z.infer<typeof ZCustomerDto>;

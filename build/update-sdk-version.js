@@ -4,7 +4,7 @@ const {version} = JSON.parse(fs.readFileSync('package.json').toString());
 
 const content = `// auto generated file
 import {AppVersion} from "./types";
-export const SdkVersion: AppVersion = "${version}";
+export const SdkVersion: AppVersion | \`\${AppVersion}-\${string}.\${number}\` = "${version}";
 `;
 
 fs.writeFileSync('src/sdk/sdk-version.ts', content);

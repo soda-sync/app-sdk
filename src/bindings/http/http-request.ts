@@ -1,6 +1,9 @@
-import {HttpMessage} from './http-message';
+import {z} from "zod";
+import {ZHttpMessage} from './http-message';
 
-export interface HttpRequest extends HttpMessage {
-  method: string;
-  url: string;
-}
+const ZHttpRequest = ZHttpMessage.extend({
+    method: z.string(),
+    url: z.string(),
+});
+
+export type HttpRequest = z.infer<typeof ZHttpRequest>;

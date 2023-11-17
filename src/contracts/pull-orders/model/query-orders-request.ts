@@ -1,13 +1,12 @@
-import {Filter, Join, NestedPropertiesRecursive} from '../../../sdk/types';
-import {OrderDto} from "../../orders/order-dto";
-import {QueryRequest} from "../../common/model/query-request";
+import {zFilter} from '../../../sdk/types';
+import {ZOrderDto} from "../../orders/order-dto";
+import {ZQueryRequest} from "../../common/model/query-request";
+import {z} from "zod";
 
-/**
- * A request object for querying orders.
- */
-export interface QueryOrdersRequest extends QueryRequest {
-    /**
-     * The filters to apply for query the orders
-     */
-    filters: Filter<Join<NestedPropertiesRecursive<OrderDto>, '.'>>[]
-}
+const ZQueryOrdersRequest = ZQueryRequest.extend({
+    /* The filters to apply for query the orders */
+    filters: z.array(zFilter(ZOrderDto)),
+});
+
+/* A request object for querying orders. */
+export type QueryOrdersRequest = z.infer<typeof ZQueryOrdersRequest>;

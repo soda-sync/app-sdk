@@ -1,10 +1,11 @@
-/**
- * Represents the author of the app.
- */
-export interface AppAuthor {
-  /** The name of an individual person or a company name */
-  name: string;
+import {z} from "zod";
 
-  /** The contact email address. Users can contact you using this email address. */
-  email: string;
-}
+export const ZAppAuthor = z.object({
+    /* The name of an individual person or a company name */
+    name: z.string(),
+    /* The contact email address. Users can contact you using this email address. */
+    email: z.string().email(),
+});
+
+/* Represents the author of the app. */
+export type AppAuthor = z.infer<typeof ZAppAuthor>;

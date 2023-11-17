@@ -1,11 +1,11 @@
-import {AttributeValues} from "../common/model/attribute-values-type";
+import {ZAttributeValues} from "../common/model/attribute-values-type";
+import {z} from "zod";
 
-export interface ProductImageDto {
-    /** The URL to the product image. */
-    url: string;
-
-    /** Should this image used as the default image? */
-    isDefault?: boolean;
-
-    attributeValues?: AttributeValues;
-}
+export const ZProductImageDto = z.object({
+    /* The URL to the product image. */
+    url: z.string().url(),
+    /* Should this image used as the default image? */
+    isDefault: z.boolean().optional(),
+    attributeValues: ZAttributeValues,
+});
+export type ProductImageDto = z.infer<typeof ZProductImageDto>;

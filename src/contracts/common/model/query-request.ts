@@ -1,21 +1,13 @@
-/**
- * A request object for querying.
- */
-export interface QueryRequest {
-    /**
-     * The token of the queried page.
-     * To request the first page, set it to null.
-     */
-    pageToken?: string;
+import {z} from "zod";
+import {ZAttributeValues} from "./attribute-values-type";
 
-    /**
-     * The page size
-     * Must be >0
-     */
-    pageSize: number;
+export const ZQueryRequest = z.object({
+    /* The token of the queried page. To request the first page, set it to null. */
+    pageToken: z.string().optional(),
+    /* The page size. */
+    pageSize: z.number().gt(0),
+    attributeValues: ZAttributeValues,
+});
 
-    /**
-     * Custom data
-     */
-    attributes?: { [key: string]: any },
-}
+/* A request object for querying. */
+export type QueryRequest = z.infer<typeof ZQueryRequest>;

@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.5.0-alpha.0
+
+Changes:
+- Migrated the dtos to zod objects. This allows us to validate the payloads and improve the all over developer experience. 
+
 ## v3.4.0
 
 Features:

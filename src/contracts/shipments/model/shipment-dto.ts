@@ -1,28 +1,25 @@
-import {DateTimeString} from '../../../sdk/types';
-import {MoneyDto} from "../../money/model/money-dto";
-import {AttributeValues} from "../../common/model/attribute-values-type";
+import {ZDateTimeString} from '../../../sdk/types';
+import {ZMoneyDto} from "../../money/model/money-dto";
+import {ZAttributeValues} from "../../common/model/attribute-values-type";
+import {z} from "zod";
+import {ZTaxRate} from "../../money/model/tax-rate-dto";
 
-export interface ShipmentDto {
-  /** The id of the shipment */
-  id?: string;
+export const ZShipmentDto = z.object({
+    /* The id of the shipment. */
+    id: z.string().optional(),
+    /* The date when this order was shipped. */
+    date: ZDateTimeString,
+    /* The country code where this shipment is sent from. */
+    sourceCountryCode: z.string().optional(),
+    /* The shipping method. */
+    method: z.string().optional(),
+    /* The net ship cost. */
+    netPrice: ZMoneyDto,
+    /* The gross ship cost. */
+    grossPrice: ZMoneyDto,
+    /* The tax rate. */
+    taxRate: ZTaxRate,
+    attributeValues: ZAttributeValues,
+});
 
-  /** The date when this order was shipped */
-  date: DateTimeString;
-
-  /** The country code where this shipment is sent from  */
-  sourceCountryCode?: string;
-
-  /** The shipping method */
-  method?: string;
-
-  /** The net ship cost. */
-  netPrice: MoneyDto;
-
-  /** The gross ship cost. */
-  grossPrice: MoneyDto;
-
-  /** The tax */
-  taxRate: number;
-
-  attributeValues?: AttributeValues;
-}
+export type ShipmentDto = z.infer<typeof ZShipmentDto>;

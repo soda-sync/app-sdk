@@ -1,4 +1,6 @@
-import {Field, Join} from "../../../sdk/types";
+import {zField, zObjectPropertyPath} from "../../../sdk/types";
+
+import {z} from "zod";
 
 export enum PatchOperation {
     /**
@@ -46,20 +48,31 @@ export enum PatchOperation {
     Remove = 'remove',
 }
 
-export type RemovePatcher<TPath extends Join<string[], '.'>> = {
-    field: TPath,
-    operation: PatchOperation.Remove,
+export const ZPatchOperation = z.nativeEnum(PatchOperation);
+
+export function zRemovePatcher<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return z.object({
+        field: zObjectPropertyPath(obj, false),
+        operation: z.literal(PatchOperation.Remove),
+    });
 }
 
-export type AppendPatcher<TPath extends Join<string[], '.'>> = Field<TPath> & {
-    operation: PatchOperation.Append,
+export function zAppendPatcher<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return zField(obj, false).extend({
+        operation: z.literal(PatchOperation.Append),
+    });
 }
 
-export type SetPatcher<TField extends Join<string[], '.'>> = Field<TField> & {
-    operation?: PatchOperation.Set,
+export function zSetPatcher<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return zField(obj, false).extend({
+        operation: z.literal(PatchOperation.Set),
+    });
 }
 
-export type Patcher<TField extends Join<string[], '.'>> =
-    RemovePatcher<TField>
-    | AppendPatcher<TField>
-    | SetPatcher<TField>;
+export function zPatcher<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return z.union([
+        zRemovePatcher(obj),
+        zAppendPatcher(obj),
+        zSetPatcher(obj),
+    ])
+}

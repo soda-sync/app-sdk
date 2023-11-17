@@ -7,8 +7,8 @@ import {QueryOrdersResult} from '../model/query-orders-result';
  * @see AppFeature
  */
 export interface OrderProvider {
-  /**
-   * Handle the request and return the queried orders in a unified form.
-   */
-  queryOrders(request: QueryOrdersRequest): Promise<QueryOrdersResult>;
+    /**
+     * Handle the request and return the queried orders in a unified form.
+     */
+    queryOrders(request: QueryOrdersRequest): Promise<QueryOrdersResult>;
 }

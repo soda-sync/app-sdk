@@ -1,16 +1,19 @@
-import {AttributeValues} from "../common/model/attribute-values-type";
+import {ZAttributeValues} from "../common/model/attribute-values-type";
+import {z} from "zod";
 
-export interface AddressDto {
-  id?: string;
-  company?: string;
-  firstName?: string;
-  surname?: string;
-  line2?: string;
-  street?: string;
-  houseNumber?: string;
-  zipCode?: string;
-  city?: string;
-  countryCode?: string;
-  state?: string;
-  attributeValues?: AttributeValues;
-}
+export const ZAddressDto = z.object({
+    id: z.string().optional(),
+    company: z.string().optional(),
+    firstName: z.string().optional(),
+    surname: z.string().optional(),
+    line2: z.string().optional(),
+    street: z.string().optional(),
+    houseNumber: z.string().optional(),
+    zipCode: z.string().optional(),
+    city: z.string().optional(),
+    countryCode: z.string().optional(),
+    state: z.string().optional(),
+    attributeValues: ZAttributeValues,
+});
+
+export type  AddressDto = z.infer<typeof ZAddressDto>;
