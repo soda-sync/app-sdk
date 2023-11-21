@@ -29,3 +29,6 @@ export const ZPatchProductsRequest = z.object({
 
 /* This type represents a request to update / patch products. */
 export type PatchProductsRequest = z.infer<typeof ZPatchProductsRequest>;
+
+/* This type represents a request to update / patch products. */
+export type RawPatchProductsRequest = z.input<typeof ZPatchProductsRequest>;

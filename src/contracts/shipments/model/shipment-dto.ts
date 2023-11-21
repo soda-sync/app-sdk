@@ -23,3 +23,4 @@ export const ZShipmentDto = z.object({
 });
 
 export type ShipmentDto = z.infer<typeof ZShipmentDto>;
+export type RawShipmentDto = z.input<typeof ZShipmentDto>;

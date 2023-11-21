@@ -5,36 +5,36 @@ import {AppDetails} from '../sdk/app-details';
 import {Hooks} from "./hooks";
 
 declare global {
-  /**
-   * SodaSync bindings
-   */
-  interface SodaSyncEnv {
-
     /**
-     * Provides a http client for interacting with apis.
+     * SodaSync bindings
      */
-    readonly http: HttpClient;
+    interface SodaSyncEnv {
 
-    /**
-     * Access the current app context. This is useful for accessing configuration values.
-     */
-    readonly context: Context;
+        /**
+         * Provides a http client for interacting with apis.
+         */
+        readonly http: HttpClient;
 
-    /**
-     * Use the logger to log messages from your app.
-     */
-    readonly logger: Logger;
+        /**
+         * Access the current app context. This is useful for accessing configuration values.
+         */
+        readonly context: Context;
 
-    /**
-     * Register your app.
-     */
-    readonly registerApp: (app: AppDetails) => void;
+        /**
+         * Use the logger to log messages from your app.
+         */
+        readonly logger: Logger;
 
-    /**
-     * Hooks to control the flow of soda sync apps.
-     */
-    readonly hooks: Hooks;
-  }
+        /**
+         * Register your app.
+         */
+        readonly registerApp: (app: AppDetails) => void;
 
-  const SodaSync: SodaSyncEnv;
+        /**
+         * Hooks to control the flow of soda sync apps.
+         */
+        readonly hooks: Hooks;
+    }
+
+    const SodaSync: SodaSyncEnv;
 }

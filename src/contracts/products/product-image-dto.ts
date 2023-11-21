@@ -8,4 +8,6 @@ export const ZProductImageDto = z.object({
     isDefault: z.boolean().optional(),
     attributeValues: ZAttributeValues,
 });
+
 export type ProductImageDto = z.infer<typeof ZProductImageDto>;
+export type RawProductImageDto = z.input<typeof ZProductImageDto>;

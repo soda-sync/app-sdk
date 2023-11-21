@@ -23,16 +23,17 @@ export const ZOrderDto = z.object({
     /* The delivery address. */
     deliveryAddress: ZAddressDto.optional(),
     /* The ordered items. */
-    items: z.array(ZOrderItemDto).optional().default([]),
+    items: z.array(ZOrderItemDto).default([]),
     /* Shipments related to the order. */
-    shipments: z.array(ZShipmentDto).optional().default([]),
+    shipments: z.array(ZShipmentDto).default([]),
     /* The status of the order. */
     status: ZOrderStatus,
     /* The status of the payment. */
     paymentStatus: ZPaymentStatus,
     /* Transactions related to the order. */
-    transactions: z.array(ZOrderTransactionDto).optional().default([]),
+    transactions: z.array(ZOrderTransactionDto).default([]),
     attributeValues: ZAttributeValues,
 });
 
 export type OrderDto = z.infer<typeof ZOrderDto>;
+export type RawOrderDto = z.input<typeof ZOrderDto>;

@@ -29,13 +29,16 @@ export const ZProductDto = z.object({
     /* The GTIN of the product. */
     gtin: z.string().optional(),
     /* The images of the product. */
-    images: z.array(ZProductImageDto).optional().default([]),
+    images: z.array(ZProductImageDto).default([]),
     /* Product details. For example {"color": "red", "size": "M"}. */
-    details: z.record(z.string(), z.string()).optional().default({}),
+    details: z.record(z.string(), z.string()).default({}),
     /* The availability for this product. Leaving this field "undefined" means "not available". */
-    availability: z.array(ZProductAvailabilityDto).optional().default([]),
+    availability: z.array(ZProductAvailabilityDto).default([]),
     attributeValues: ZAttributeValues,
 });
 
 /* A product */
 export type ProductDto = z.infer<typeof ZProductDto>;
+
+/* A product */
+export type RawProductDto = z.input<typeof ZProductDto>;

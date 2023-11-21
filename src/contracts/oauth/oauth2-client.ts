@@ -1,4 +1,4 @@
-import {AuthRequest} from "./model/auth-request";
+import {AuthRequest, RawAuthRequest} from "./model/auth-request";
 import {HttpRequest} from "../../bindings/http/http-request";
 
 /**
@@ -20,7 +20,7 @@ export interface OAuth2Client {
      * @param redirectUrl - The url for redirecting the user back.
      * @param state - The state string
      */
-    generateAuthRequest(redirectUrl: string, state: string): AuthRequest;
+    generateAuthRequest(redirectUrl: string, state: string): RawAuthRequest;
 
     /**
      * This method is called after the user was redirected back from the external system.

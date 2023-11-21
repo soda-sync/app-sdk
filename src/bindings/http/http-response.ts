@@ -6,3 +6,4 @@ export const ZHttpResponse = ZHttpMessage.extend({
 });
 
 export type HttpResponse = z.infer<typeof ZHttpResponse>;
+export type RawHttpResponse = z.input<typeof ZHttpResponse>;

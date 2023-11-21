@@ -1,5 +1,5 @@
 import {PatchOrdersRequest} from "../../orders/patch-orders-request";
-import {OrderDto} from "../../orders/order-dto";
+import {RawOrderDto} from "../../orders/order-dto";
 
 /**
  * Implement this interface for APIs that can receive order updates.
@@ -57,5 +57,5 @@ export interface OrdersUpdateConsumer {
      *
      * @returns The list of patched orders
      */
-    updateOrders(request: PatchOrdersRequest): Promise<OrderDto[]>;
+    updateOrders(request: PatchOrdersRequest): Promise<RawOrderDto[]>;
 }

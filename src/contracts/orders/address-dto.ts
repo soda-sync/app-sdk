@@ -16,4 +16,5 @@ export const ZAddressDto = z.object({
     attributeValues: ZAttributeValues,
 });
 
-export type  AddressDto = z.infer<typeof ZAddressDto>;
+export type AddressDto = z.infer<typeof ZAddressDto>;
+export type RawAddressDto = z.input<typeof ZAddressDto>;

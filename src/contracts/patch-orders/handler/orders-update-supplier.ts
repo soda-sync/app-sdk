@@ -1,7 +1,7 @@
 import {HttpRequest} from "../../../bindings/http/http-request";
-import {PatchOrdersRequest} from "../../orders/patch-orders-request";
+import {RawPatchOrdersRequest} from "../../orders/patch-orders-request";
 import {OrderDto} from "../../orders/order-dto";
-import {HttpResponse} from "../../../bindings/http/http-response";
+import {RawHttpResponse} from "../../../bindings/http/http-response";
 
 /**
  * This is the caller side of the contract.
@@ -47,12 +47,12 @@ export interface OrdersUpdateSupplier {
      * }
      * ```
      */
-    processUpdateRequest(request: HttpRequest): Promise<PatchOrdersRequest>;
+    processUpdateRequest(request: HttpRequest): Promise<RawPatchOrdersRequest>;
 
     /**
      * Convert the updated orders to valid http response.
      *
      * @param orders - The updated orders.
      */
-    provideUpdatedOrders(orders: OrderDto[]): Promise<HttpResponse>;
+    provideUpdatedOrders(orders: OrderDto[]): Promise<RawHttpResponse>;
 }

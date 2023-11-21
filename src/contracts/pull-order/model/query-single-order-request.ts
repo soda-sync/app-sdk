@@ -10,3 +10,4 @@ export const ZQueryOrderRequest = z.object({
 });
 
 export type QueryOrderRequest = z.infer<typeof ZQueryOrderRequest>;
+export type RawQueryOrderRequest = z.input<typeof ZQueryOrderRequest>;

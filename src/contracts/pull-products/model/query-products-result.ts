@@ -6,3 +6,6 @@ export const ZQueryProductsResult = zQueryResult(ZProductDto);
 
 /* The query products result */
 export type QueryProductsResult = z.infer<typeof ZQueryProductsResult>;
+
+/* The query products result */
+export type RawQueryProductsResult = z.input<typeof ZQueryProductsResult>;

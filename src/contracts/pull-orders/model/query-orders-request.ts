@@ -10,3 +10,6 @@ export const ZQueryOrdersRequest = ZQueryRequest.extend({
 
 /* A request object for querying orders. */
 export type QueryOrdersRequest = z.infer<typeof ZQueryOrdersRequest>;
+
+/* A request object for querying orders. */
+export type RawQueryOrdersRequest = z.input<typeof ZQueryOrdersRequest>;

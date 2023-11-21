@@ -11,3 +11,6 @@ export const ZQueryRequest = z.object({
 
 /* A request object for querying. */
 export type QueryRequest = z.infer<typeof ZQueryRequest>;
+
+/* A request object for querying. */
+export type RawQueryRequest = z.input<typeof ZQueryRequest>;

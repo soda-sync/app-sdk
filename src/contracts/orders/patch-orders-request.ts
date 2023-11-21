@@ -31,3 +31,4 @@ export const ZPatchOrdersRequest = z.object({
 
 /* This interface represents a request to update / patch orders. */
 export type PatchOrdersRequest = z.infer<typeof ZPatchOrdersRequest>;
+export type RawPatchOrdersRequest = z.input<typeof ZPatchOrdersRequest>;

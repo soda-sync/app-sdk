@@ -92,6 +92,7 @@ export function zField<T extends z.ZodRawShape>(obj: z.ZodObject<T>, arrayDeepIn
     })
 }
 
+
 export function zFilter<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
     return zField(obj, true).extend({
         operation: z.nativeEnum(FilterOperation),

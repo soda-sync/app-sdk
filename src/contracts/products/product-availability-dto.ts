@@ -10,4 +10,6 @@ export const ZProductAvailabilityDto = z.object({
     stockName: z.string().optional(),
     attributeValues: ZAttributeValues,
 });
+
 export type ProductAvailabilityDto = z.infer<typeof ZProductAvailabilityDto>;
+export type RawProductAvailabilityDto = z.input<typeof ZProductAvailabilityDto>;

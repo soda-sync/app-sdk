@@ -15,4 +15,7 @@ export const ZProductPushContainerDto = z.object({
 });
 
 /* This interface is used for wrapping products for pushing purposes. */
-export type  ProductPushContainerDto = z.infer<typeof ZProductPushContainerDto>;
+export type ProductPushContainerDto = z.infer<typeof ZProductPushContainerDto>;
+
+/* This interface is used for wrapping products for pushing purposes. */
+export type RawProductPushContainerDto = z.input<typeof ZProductPushContainerDto>;

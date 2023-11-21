@@ -10,3 +10,6 @@ export const ZQueryProductsRequest = ZQueryRequest.extend({
 
 /* A request object for querying products. */
 export type QueryProductsRequest = z.infer<typeof ZQueryProductsRequest>;
+
+/* A request object for querying products. */
+export type RawQueryProductsRequest = z.input<typeof ZQueryProductsRequest>;

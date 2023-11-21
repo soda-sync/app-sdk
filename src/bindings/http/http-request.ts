@@ -7,3 +7,4 @@ export const ZHttpRequest = ZHttpMessage.extend({
 });
 
 export type HttpRequest = z.infer<typeof ZHttpRequest>;
+export type RawHttpRequest = z.input<typeof ZHttpRequest>;

@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.5.0-alpha.3
+
+Features:
+- Added new Raw* types for using optional and default values together
+
 ## v3.5.0-alpha.2
 
 Features:

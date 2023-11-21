@@ -9,3 +9,6 @@ export const ZAppAuthor = z.object({
 
 /* Represents the author of the app. */
 export type AppAuthor = z.infer<typeof ZAppAuthor>;
+
+/* Represents the author of the app. */
+export type RawAppAuthor = z.input<typeof ZAppAuthor>;

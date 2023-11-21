@@ -24,3 +24,4 @@ export const ZOrderItemDto = z.object({
 });
 
 export type OrderItemDto = z.infer<typeof ZOrderItemDto>;
+export type RawOrderItemDto = z.input<typeof ZOrderItemDto>;

@@ -18,4 +18,5 @@ export const ZOrderTransactionDto = z.object({
     attributeValues: ZAttributeValues,
 })
 
-export type  OrderTransactionDto = z.infer<typeof ZOrderTransactionDto>;
+export type OrderTransactionDto = z.infer<typeof ZOrderTransactionDto>;
+export type RawOrderTransactionDto = z.input<typeof ZOrderTransactionDto>;

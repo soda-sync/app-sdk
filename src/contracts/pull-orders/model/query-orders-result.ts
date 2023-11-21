@@ -6,3 +6,6 @@ export const ZQueryOrdersResult = zQueryResult(ZOrderDto);
 
 /* The query orders result */
 export type QueryOrdersResult = z.infer<typeof ZQueryOrdersResult>;
+
+/* The query orders result */
+export type RawQueryOrdersResult = z.input<typeof ZQueryOrdersResult>;

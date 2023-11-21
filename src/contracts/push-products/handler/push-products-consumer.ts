@@ -1,4 +1,4 @@
-import {ProductPushContainerDto} from "../model/product-push-container-dto";
+import {ProductPushContainerDto, RawProductPushContainerDto} from "../model/product-push-container-dto";
 
 /**
  * Implement this interface for APIs that can receive products.
@@ -13,5 +13,5 @@ export interface PushProductsConsumer {
      *
      * @param products - The products to push
      */
-    pushProducts(products: ProductPushContainerDto[]): Promise<ProductPushContainerDto[]>;
+    pushProducts(products: ProductPushContainerDto[]): Promise<RawProductPushContainerDto[]>;
 }

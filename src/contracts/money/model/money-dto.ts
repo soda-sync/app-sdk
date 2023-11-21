@@ -31,3 +31,6 @@ export const ZMoneyDto = z.object({
 
 /* Represents a monetary value */
 export type MoneyDto = z.infer<typeof ZMoneyDto>;
+
+/* Represents a monetary value */
+export type RawMoneyDto = z.input<typeof ZMoneyDto>;
