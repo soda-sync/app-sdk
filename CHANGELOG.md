@@ -2,9 +2,11 @@
 
 ## v3.5.0-alpha.2
 
+Features:
+- Added default values for arrays and record types in order to make them optional
+
 Changes:
 - Mark filters and patchers for data modification as non-empty
-
 ## v3.5.0-alpha.1
 
 Fixes:
