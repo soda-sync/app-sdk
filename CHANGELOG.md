@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.0.0
+
+Breaking:
+- Renamed `QueryOrderRequest.attributes` to `QueryOrderRequest.attributeValues` 
+
 ## v3.5.0-alpha.3
 
 Features:

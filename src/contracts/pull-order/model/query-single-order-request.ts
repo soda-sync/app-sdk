@@ -6,7 +6,7 @@ import {ZOrderDto} from "../../orders/order-dto";
 export const ZQueryOrderRequest = z.object({
     /* The filters to apply for querying the order. */
     filters: zFilterArray(ZOrderDto),
-    attributes: ZAttributeValues,
+    attributeValues: ZAttributeValues,
 });
 
 export type QueryOrderRequest = z.infer<typeof ZQueryOrderRequest>;
