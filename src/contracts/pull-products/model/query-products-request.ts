@@ -3,7 +3,7 @@ import {ZProductDto} from "../../products/product-dto";
 import {ZQueryRequest} from "../../common/model/query-request";
 import {z} from "zod";
 
-const ZQueryProductsRequest = ZQueryRequest.extend({
+export const ZQueryProductsRequest = ZQueryRequest.extend({
     /* The filters to apply for query the products */
     filters: z.array(zFilter(ZProductDto)),
 });

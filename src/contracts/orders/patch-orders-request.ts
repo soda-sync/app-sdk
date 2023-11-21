@@ -3,7 +3,7 @@ import {z} from "zod";
 import {zPatcher} from "../common/model/data-patching";
 import {ZOrderDto} from "./order-dto";
 
-const ZPatchOrdersRequest = z.object({
+export const ZPatchOrdersRequest = z.object({
 
     /* Filters are used to restrict the set of orders to modify.
      * All provided filters must match against an order.

@@ -6,10 +6,10 @@ import {z} from "zod";
  * EUR  5.23 ->  523 cents
  * USD 12.23 -> 1223 pennies
  */
-const ZSmallestCurrencyUnit = z.number();
+export const ZSmallestCurrencyUnit = z.number();
 
 /* A 3-letter ISO 4217 currency code. For example EUR */
-const ZCurrencyCode = z.string()
+export const ZCurrencyCode = z.string()
     .length(3)
     .toUpperCase();
 
