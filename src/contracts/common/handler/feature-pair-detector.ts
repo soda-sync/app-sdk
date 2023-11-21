@@ -14,4 +14,3 @@ export interface FeaturePairDetector {
      */
     detect(request: HttpRequest): [AppFeature, AppFeature] | null;
 }
-

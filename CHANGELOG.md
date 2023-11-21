@@ -4,32 +4,28 @@
 
 Breaking:
 - Renamed `QueryOrderRequest.attributes` to `QueryOrderRequest.attributeValues` 
-
-## v3.5.0-alpha.3
-
-Features:
-- Added new Raw* types for using optional and default values together
-
-## v3.5.0-alpha.2
+- Replaced all return types with `Raw{OriginalType}`. This ensures that optional properties remain optional
+- Changed `SodaSync.Hooks.terminateRequest(HttpResponse)` to `SodaSync.Hooks.terminateRequest(RawHttpResponse)` 
+- Filters and Patchers for data modification must be non-empty
+- Removed TerminateRequestError. Use `SodaSync.hooks.terminateRequest(response)` instead.
 
 Features:
 - Added default values for arrays and record types in order to make them optional
+- Added new Raw* types for using optional and default values together
+- Added a TaxRate type (number, non-negative, <=100)
+- Model validation
+  - `value` (type) in Filters and Patchers
+  - `pageSize` (>0) in `QueryRequest` and `QueryResult`
+  - length of CurrencyCode
+  - `divisor` (positive) in `MoneyDto`
+  - `email` (email) in `CustomerDto`
+  - `url` (url) in `ProductImageDto`
+  - `taxRate` (TaxRate) in `ShipmentDto`
 
 Changes:
-- Mark filters and patchers for data modification as non-empty
-
-## v3.5.0-alpha.1
-
-Fixes:
-- Added missing Z* constant exports
-
-Changes:
+- Migrated the dtos to zod objects. This allows us to validate the payloads and improve the overall developer experience.
 - Changed the type of AppDetails.SdkVersion from "AppVersion" to "SdkVersionT"
-
-## v3.5.0-alpha.0
-
-Changes:
-- Migrated the dtos to zod objects. This allows us to validate the payloads and improve the all over developer experience. 
+- Type of AppDetails.sdkVersion changed from AppVersion to SdkVersionT
 
 ## v3.4.0
 
