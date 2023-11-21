@@ -22,7 +22,7 @@ export type AppVersion = z.infer<typeof ZAppVersion>;
 export const ZSdkVersion = z.custom<`${number}.${number}.${number}` | `${number}.${number}.${number}-${string}.${number}`>((val) =>
     /^\d+\.\d+\.\d+(-(alpha|beta|rc)\.\d+)?$/g.test(val as string)
 );
-export type SdkVersion = z.infer<typeof ZSdkVersion>;
+export type SdkVersionT = z.infer<typeof ZSdkVersion>;
 
 export const ZDateTimeString = z.string();
 export type DateTimeString = z.infer<typeof ZDateTimeString>;

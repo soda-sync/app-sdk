@@ -1,5 +1,5 @@
 import {AppAuthor} from './app-author';
-import {AppFactory, AppFeature, AppVersion, SdkVersion} from './types';
+import {AppFactory, AppFeature, AppVersion, SdkVersionT} from './types';
 import {AppDocs} from './app-docs';
 import {AppConfiguration} from './configuration/app-configuration';
 import {FeaturePairDetector} from "../contracts/common/handler/feature-pair-detector";
@@ -10,7 +10,7 @@ import {OAuth2Client} from "../contracts/oauth/oauth2-client";
  */
 export interface AppDetails {
 
-    sdkVersion: SdkVersion;
+    sdkVersion: SdkVersionT;
 
     /**
      * The name of the app. This will be displayed to all users.

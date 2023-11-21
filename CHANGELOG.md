@@ -6,7 +6,7 @@ Fixes:
 - Added missing Z* constant exports
 
 Changes:
-- Changed the type of AppDetails.SdkVersion from "AppVersion" to "SdkVersion"
+- Changed the type of AppDetails.SdkVersion from "AppVersion" to "SdkVersionT"
 
 ## v3.5.0-alpha.0
 
