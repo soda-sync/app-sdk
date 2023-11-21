@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.5.0-alpha.1
+
+Fixes:
+- Added missing Z* constant exports
+
+Changes:
+- Changed the type of AppDetails.SdkVersion from "AppVersion" to "SdkVersion"
+
 ## v3.5.0-alpha.0
 
 Changes:
