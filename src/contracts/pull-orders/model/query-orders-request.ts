@@ -1,11 +1,11 @@
-import {zFilter} from '../../../sdk/types';
+import {zFilterArray} from '../../../sdk/types';
 import {ZOrderDto} from "../../orders/order-dto";
 import {ZQueryRequest} from "../../common/model/query-request";
 import {z} from "zod";
 
 export const ZQueryOrdersRequest = ZQueryRequest.extend({
     /* The filters to apply for query the orders */
-    filters: z.array(zFilter(ZOrderDto)),
+    filters: zFilterArray(ZOrderDto),
 });
 
 /* A request object for querying orders. */

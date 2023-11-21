@@ -1,6 +1,6 @@
-import {zFilter,} from "../../sdk/types";
+import {zNonEmptyFilterArray} from "../../sdk/types";
 import {ZProductDto} from "./product-dto";
-import {zPatcher} from "../common/model/data-patching";
+import {zPatcherArray} from "../common/model/data-patching";
 import {z} from "zod";
 
 export const ZPatchProductsRequest = z.object({
@@ -15,7 +15,7 @@ export const ZPatchProductsRequest = z.object({
      * The source system need to update all products with taxRate greater than 0 the filters should be
      * `[{field: 'taxRate', operation: FilterOperation.GreaterThan, value: 0}]`
      */
-    filters: z.array(zFilter(ZProductDto)),
+    filters: zNonEmptyFilterArray(ZProductDto),
     /* These are the fields to update of the product.
      *
      * Field values SHOULD use the enforce function to ensure the type.
@@ -24,7 +24,7 @@ export const ZPatchProductsRequest = z.object({
      * If you like to set the manufacturer of all matching products to "My manufacturer":
      * `[{field: 'manufacturer', value: enforce<ProductDto["manufacturer"]>('My manufacturer')}]`
      */
-    fields: z.array(zPatcher(ZProductDto)),
+    fields: zPatcherArray(ZProductDto),
 });
 
 /* This type represents a request to update / patch products. */

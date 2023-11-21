@@ -98,6 +98,14 @@ export function zFilter<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
     });
 }
 
+export function zFilterArray<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return z.array(zFilter(obj));
+}
+
+export function zNonEmptyFilterArray<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return zFilterArray(obj).nonempty();
+}
+
 /**
  * Enforce a specific type for an inline value.
  * @param val - The value

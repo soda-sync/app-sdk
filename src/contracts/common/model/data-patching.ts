@@ -76,3 +76,7 @@ export function zPatcher<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
         zSetPatcher(obj),
     ])
 }
+
+export function zPatcherArray<T extends z.ZodRawShape>(obj: z.ZodObject<T>) {
+    return z.array(zPatcher(obj)).nonempty();
+}

@@ -1,6 +1,6 @@
-import {zFilter,} from "../../sdk/types";
+import {zNonEmptyFilterArray} from "../../sdk/types";
 import {z} from "zod";
-import {zPatcher} from "../common/model/data-patching";
+import {zPatcherArray} from "../common/model/data-patching";
 import {ZOrderDto} from "./order-dto";
 
 export const ZPatchOrdersRequest = z.object({
@@ -16,7 +16,7 @@ export const ZPatchOrdersRequest = z.object({
      * The source system need to update all orders with orderDate greater than 2023-01-01 14:45:59 the filters should be
      * `[{field: 'orderDate', operation: FilterOperation.GreaterThan, value: '2023-01-01T14:45:59Z'}]`
      */
-    filters: z.array(zFilter(ZOrderDto)),
+    filters: zNonEmptyFilterArray(ZOrderDto),
 
     /* These are the fields to update of the order.
      *
@@ -26,7 +26,7 @@ export const ZPatchOrdersRequest = z.object({
      * If you like to set the status of all matching orders to "COMPLETED":
      * `[{field: 'status', value: enforce<OrderDto["status"]>('COMPLETED')}]`
      */
-    fields: z.array(zPatcher(ZOrderDto)),
+    fields: zPatcherArray(ZOrderDto),
 });
 
 /* This interface represents a request to update / patch orders. */

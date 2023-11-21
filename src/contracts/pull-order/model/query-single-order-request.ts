@@ -1,11 +1,11 @@
 import {z} from "zod";
 import {ZAttributeValues} from "../../common/model/attribute-values-type";
-import {zFilter} from "../../../sdk/types";
+import {zFilterArray} from "../../../sdk/types";
 import {ZOrderDto} from "../../orders/order-dto";
 
 export const ZQueryOrderRequest = z.object({
     /* The filters to apply for querying the order. */
-    filters: z.array(zFilter(ZOrderDto)),
+    filters: zFilterArray(ZOrderDto),
     attributes: ZAttributeValues,
 });
 

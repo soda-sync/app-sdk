@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.5.0-alpha.2
+
+Changes:
+- Mark filters and patchers for data modification as non-empty
+
 ## v3.5.0-alpha.1
 
 Fixes:
