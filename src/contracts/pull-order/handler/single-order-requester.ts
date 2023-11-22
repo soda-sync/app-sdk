@@ -1,6 +1,6 @@
 import {HttpRequest} from '../../../bindings/http/http-request';
-import {HttpResponse} from '../../../bindings/http/http-response';
-import {QueryOrderRequest} from "../model/query-single-order-request";
+import {RawHttpResponse} from '../../../bindings/http/http-response';
+import {RawQueryOrderRequest} from "../model/query-single-order-request";
 import {OrderDto} from "../../orders/order-dto";
 
 /**
@@ -13,10 +13,10 @@ export interface SingleOrderRequester {
     /**
      * Handle the incoming request and transform it to a QueryOrderRequest.
      */
-    processSingleOrderRequest(request: HttpRequest): Promise<QueryOrderRequest>;
+    processSingleOrderRequest(request: HttpRequest): Promise<RawQueryOrderRequest>;
 
     /**
      * Transform the result to the expected response.
      */
-    provideSingleOrder(result: OrderDto | null): Promise<HttpResponse>;
+    provideSingleOrder(result: OrderDto | null): Promise<RawHttpResponse>;
 }

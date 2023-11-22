@@ -1,5 +1,5 @@
 import {PatchProductsRequest} from "../../products/patch-products-request";
-import {ProductDto} from "../../products/product-dto";
+import {RawProductDto} from "../../products/product-dto";
 
 /**
  * Implement this interface for APIs that can receive product updates.
@@ -30,5 +30,5 @@ export interface ProductsUpdateConsumer {
      *
      * @returns The list of patched products
      */
-    updateProducts(request: PatchProductsRequest): Promise<ProductDto[]>;
+    updateProducts(request: PatchProductsRequest): Promise<RawProductDto[]>;
 }

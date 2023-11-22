@@ -1,5 +1,18 @@
 # Changelog
 
+## v4.0.1
+
+Bugfixes:
+- Fixed handler return types
+  - ProductsUpdateConsumer
+  - ProductsUpdateSupplier
+  - SingleOrderProvider
+  - SingleOrderRequester
+  - OrderProvider
+  - OrderRequester
+  - ProductProvider
+  - ProductRequester
+
 ## v4.0.0
 
 Breaking:
@@ -25,7 +38,6 @@ Features:
 Changes:
 - Migrated the dtos to zod objects. This allows us to validate the payloads and improve the overall developer experience.
 - Changed the type of AppDetails.SdkVersion from "AppVersion" to "SdkVersionT"
-- Type of AppDetails.sdkVersion changed from AppVersion to SdkVersionT
 
 ## v3.4.0
 

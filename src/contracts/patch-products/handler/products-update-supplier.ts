@@ -1,7 +1,7 @@
 import {HttpRequest} from "../../../bindings/http/http-request";
-import {HttpResponse} from "../../../bindings/http/http-response";
+import {RawHttpResponse} from "../../../bindings/http/http-response";
 import {ProductDto} from "../../products/product-dto";
-import {PatchProductsRequest} from "../../products/patch-products-request";
+import {RawPatchProductsRequest} from "../../products/patch-products-request";
 
 /**
  * This is the caller side of the contract.
@@ -45,12 +45,12 @@ export interface ProductsUpdateSupplier {
      * }
      * ```
      */
-    processProductsUpdateRequest(request: HttpRequest): Promise<PatchProductsRequest>;
+    processProductsUpdateRequest(request: HttpRequest): Promise<RawPatchProductsRequest>;
 
     /**
      * Convert the updated products to valid http response.
      *
      * @param products - The updated products.
      */
-    provideUpdatedProducts(products: ProductDto[]): Promise<HttpResponse>;
+    provideUpdatedProducts(products: ProductDto[]): Promise<RawHttpResponse>;
 }
