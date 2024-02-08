@@ -1,0 +1,27 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install global requirements
+        run: npm install -g typescript barrelsby
+      - name: Install project dependencies
+        run: npm i
+      - name: Update the SDK version
+        run: node build/update-sdk-version.js
+      - name: Regenerate the barrels
+        run: rm -rf src/index.ts npm run generate-barrels
+      - name: Build the package
+        run: npm run build
+      - name: Publish the package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
