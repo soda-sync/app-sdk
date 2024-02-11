@@ -34,6 +34,8 @@ export const ZProductDto = z.object({
     details: z.record(z.string(), z.string()).default({}),
     /* The availability for this product. Leaving this field "undefined" means "not available". */
     availability: z.array(ZProductAvailabilityDto).default([]),
+    /* The manufacturer part number of the product */
+    mpn: z.string().optional().describe('The manufacturer part number of the product'),
     attributeValues: ZAttributeValues,
 });
 
