@@ -1,5 +1,10 @@
 # Changelog
 
+## Next
+
+Features:
+- Added a manufacturer part number to the `ProductDto`
+
 ## v4.0.1
 
 Bugfixes:
